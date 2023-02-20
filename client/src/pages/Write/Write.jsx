@@ -21,7 +21,7 @@ export default function Write() {
             if (file) {
                 const formData = new FormData();
                 formData.append("file", file);
-                const res = await axios.post("http://localhost:8800/api/upload", formData, { withCredentials: true });
+                const res = await axios.post("https://portfolio-backend-x4ne.vercel.app/api/upload", formData, { withCredentials: true });
                 return res.data
             }
             return state?.post_img;
@@ -34,10 +34,10 @@ export default function Write() {
         e.preventDefault()
         const imgUrl = await upload()
         try {
-            state ? await axios.put(`http://localhost:8800/api/posts/${state.id}`, {
+            state ? await axios.put(`https://portfolio-backend-x4ne.vercel.app/api/posts/${state.id}`, {
                 title, description: value, cat, post_img: imgUrl, isPublished:isPublished
             }, { withCredentials: true })
-                : await axios.post(`http://localhost:8800/api/posts/`, {
+                : await axios.post(`https://portfolio-backend-x4ne.vercel.app/api/posts/`, {
                     title, description: value, cat, post_img: imgUrl, date: moment(Date.now()).format("YYYY-MM-DD HH:mm"),isPublished:isPublished
                 }, { withCredentials: true })
             navigate("/")

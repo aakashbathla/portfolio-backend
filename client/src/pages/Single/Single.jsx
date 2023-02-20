@@ -18,7 +18,7 @@ export default function Single() {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8800/api/posts/${postId}`, { withCredentials: true })
+            await axios.delete(`https://portfolio-backend-x4ne.vercel.app/api/posts/${postId}`, { withCredentials: true })
             navigate("/")
         } catch (error) {
             console.log(error);
@@ -28,7 +28,7 @@ export default function Single() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await axios.get(`http://localhost:8800/api/posts/${postId}`)
+                const res = await axios.get(`https://portfolio-backend-x4ne.vercel.app/api/posts/${postId}`)
                 setPost(res.data)
             } catch (error) {
                 console.log(error);
@@ -40,7 +40,7 @@ export default function Single() {
     useEffect(() => {
         const fetchRelatedPosts = async () => {
             try {
-                const res = await axios.get(`http://localhost:8800/api/posts/?cat=${post.cat}`)
+                const res = await axios.get(`https://portfolio-backend-x4ne.vercel.app/api/posts/?cat=${post.cat}`)
                 setrelatedPosts(res.data.slice(0, 10))
             } catch (error) {
                 console.log(error);

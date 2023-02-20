@@ -17,7 +17,7 @@ export default function User() {
 
     const getUserPosts = async () => {
         try {
-            const res = await axios.get(`http://localhost:8800/api/users/posts/${currentUser.id}`)
+            const res = await axios.get(`https://portfolio-backend-x4ne.vercel.app/api/users/posts/${currentUser.id}`)
             setPosts(res.data)
         } catch (error) {
             console.log(error);
@@ -28,7 +28,7 @@ export default function User() {
         try {
             const formData = new FormData();
             formData.append("file", file);
-            const res = await axios.post("http://localhost:8800/api/upload", formData, { withCredentials: true });
+            const res = await axios.post("https://portfolio-backend-x4ne.vercel.app/api/upload", formData, { withCredentials: true });
             return res.data
         } catch (err) {
             console.log(err);
@@ -37,7 +37,7 @@ export default function User() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.put(`http://localhost:8800/api/users/deactivate-post/${id}`, { isActive: 0 }, { withCredentials: true })
+            await axios.put(`https://portfolio-backend-x4ne.vercel.app/api/users/deactivate-post/${id}`, { isActive: 0 }, { withCredentials: true })
 
         } catch (error) {
             console.log(error);
@@ -48,7 +48,7 @@ export default function User() {
         e.preventDefault()
         const img = await upload()
         try {
-            const res = await axios.put(`http://localhost:8800/api/users/${currentUser.id}`,
+            const res = await axios.put(`https://portfolio-backend-x4ne.vercel.app/api/users/${currentUser.id}`,
                 { user_name: userName, email: email, user_img: img, id: state.id }, { withCredentials: true })
             if (res.status === 200) { return setCurrentUser(res.data.data) };
         } catch (error) {

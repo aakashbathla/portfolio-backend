@@ -16,7 +16,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/register", inputs)
+      const res = await axios.post("https://portfolio-backend-x4ne.vercel.app/api/auth/register", inputs)
       console.log(res);
       navigate("/login")
     } catch (error) {
@@ -27,7 +27,7 @@ const Register = () => {
 
   const getPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:8800/api/posts");
+      const res = await axios.get("https://portfolio-backend-x4ne.vercel.app/api/posts");
       console.log(res);
     } catch (error) {
       console.log(error);
