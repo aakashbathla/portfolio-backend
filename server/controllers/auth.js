@@ -46,7 +46,7 @@ export const login = (req, res) => {
       return res
         .cookie("access_token", token, {
           path: "/",
-          domain: ".vercel.app",
+          domain: ".portfolio-backend-x4ne.vercel.app",
           sameSite: "none",
           secure: true,
         })
@@ -63,7 +63,7 @@ export const logout = (req, res) => {
     return res
       .clearCookie("access_token", {
         path: "/",
-        domain: ".vercel.app",
+        domain: ".portfolio-backend-x4ne.vercel.app",
         sameSite: "none",
         secure: true,
       })
