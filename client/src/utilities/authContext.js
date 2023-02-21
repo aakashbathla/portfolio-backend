@@ -12,7 +12,7 @@ export const AuthContextProvider = ({ children }) => {
     const res = await axios.post(
       `${process.env.REACT_APP_BASE_URL}api/auth/login`,
       inputs,
-      { withCredentials: true }
+      { withCredentials: true, credentials: "include" }
     );
     setCurrentUser(res.data);
   };
@@ -20,6 +20,7 @@ export const AuthContextProvider = ({ children }) => {
   const logout = async (inputs) => {
     await axios.post(`${process.env.REACT_APP_BASE_URL}api/auth/logout`, null, {
       withCredentials: true,
+      credentials: "include",
     });
     setCurrentUser(null);
   };
