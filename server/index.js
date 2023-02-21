@@ -8,13 +8,14 @@ import multer from "multer";
 import path from "path";
 const app = express();
 
+app.use("/uploads", express.static("uploads"));
 app.use(express.json());
 app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "https://portfolio-backend-ebon.vercel.app/upload/");
+    cb(null, "uploads/");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
@@ -26,8 +27,8 @@ const upload = multer({ storage });
 console.log("aakash");
 app.post("/api/upload", upload.single("file"), function (req, res) {
   console.log(req);
-  const file = req.file;
-  return res.status(200).json(file.filename);
+  const file = req.file.path;
+  return res.status(200).json(file);
 });
 
 app.use("/api/posts", postRoutes);
