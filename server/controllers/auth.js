@@ -42,8 +42,14 @@ export const login = (req, res) => {
         return res.status(400).json("Wrong email or password");
       const token = Jwt.sign({ id: data[0].id }, "jwtkey");
       const { password, ...other } = data[0];
+      console.log(token);
       return res
-        .cookie("access_token", token, { path: "/" })
+        .cookie("access_token", token, {
+          path: "/",
+          domain: ".",
+          sameSite: "none",
+          secure: true,
+        })
         .status(200)
         .json(other);
     });
@@ -55,7 +61,12 @@ export const login = (req, res) => {
 export const logout = (req, res) => {
   try {
     return res
-      .clearCookie("access_token", { path: "/" })
+      .clearCookie("access_token", {
+        path: "/",
+        domain: ".",
+        sameSite: "none",
+        secure: true,
+      })
       .status(200)
       .json("User has been logged out.");
   } catch (error) {
