@@ -9,7 +9,7 @@ export default function Home() {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await axios.get(`https://portfolio-backend-x4ne.vercel.app/api/posts${cat}`)
+                const res = await axios.get(`${process.env.REACT_APP_BASE_URL}api/posts${cat}`)
                 if (res.status === 200) {
                     return setPosts(res.data)
                 }

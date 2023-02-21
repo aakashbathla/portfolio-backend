@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (inputs) => {
     const res = await axios.post(
-      "https://portfolio-backend-x4ne.vercel.app/api/auth/login",
+      `${process.env.REACT_APP_BASE_URL}api/auth/login`,
       inputs,
       { withCredentials: true }
     );
@@ -18,9 +18,9 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const logout = async (inputs) => {
-    await axios.post(
-      "https://portfolio-backend-x4ne.vercel.app/api/auth/logout"
-    );
+    await axios.post(`${process.env.REACT_APP_BASE_URL}api/auth/logout`, null, {
+      withCredentials: true,
+    });
     setCurrentUser(null);
   };
 

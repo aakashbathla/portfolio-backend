@@ -16,7 +16,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://portfolio-backend-x4ne.vercel.app/api/auth/register", inputs)
+      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}api/auth/register`, inputs)
       console.log(res);
       navigate("/login")
     } catch (error) {
@@ -27,7 +27,7 @@ const Register = () => {
 
   const getPosts = async () => {
     try {
-      const res = await axios.get("https://portfolio-backend-x4ne.vercel.app/api/posts");
+      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}api/posts`);
       console.log(res);
     } catch (error) {
       console.log(error);
@@ -36,36 +36,43 @@ const Register = () => {
 
   return (
     <div className="auth-container">
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          required
-          type="text"
-          placeholder="username"
-          name="username"
-          onChange={handleChange}
-        />
-        <input
-          required
-          type="email"
-          placeholder="email"
-          name="email"
-          onChange={handleChange}
+      <div className="auth-left">
+        <div className="login-header">
+          <h1>Register</h1>
+          <p>Please enter your details</p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            required
+            type="text"
+            placeholder="Username"
+            name="username"
+            onChange={handleChange}
+          />
+          <input
+            required
+            type="email"
+            placeholder="Email"
+            name="email"
+            onChange={handleChange}
 
-        />
-        <input
-          required
-          type="password"
-          placeholder="password"
-          name="password"
-          onChange={handleChange}
-        />
-        <button type="submit">Register</button>
-        {err && <p>{err}</p>}
-        <span>
-          Do you have an account? <Link to="/login">Login</Link>
-        </span>
-      </form>
+          />
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={handleChange}
+          />
+          <button type="submit">Register</button>
+          {err && <p>{err}</p>}
+          <span className="register">
+            Do you have an account? <Link to="/login">Login</Link>
+          </span>
+        </form>
+      </div>
+      <div className="auth-right">
+      </div>
     </div>
   );
 };

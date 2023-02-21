@@ -2,13 +2,16 @@
 
 
 footer {
-    margin-top: 100px;
     padding: 20px;
     background-color: $lightGreen;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-size: 12px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: calc(100% - 40px);
     img {
       height: 50px;
     }

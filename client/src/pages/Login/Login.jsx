@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,30 +27,38 @@ const Register = () => {
   }
 
   return (
+    
     <div className="auth-container">
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          required
-          type="email"
-          placeholder="email"
-          name="email"
-          onChange={handleChange}
+      <div className="auth-left">
+        <div className="login-header">
+          <h1>Welcome Back</h1>
+          <p>Please enter your details</p>
+        </div>
+        <form onSubmit={handleSubmit}>
+          <input
+            required
+            type="email"
+            placeholder="Email"
+            name="email"
+            onChange={handleChange}
 
-        />
-        <input
-          required
-          type="password"
-          placeholder="password"
-          name="password"
-          onChange={handleChange}
-        />
-        <button type="submit">Login</button>
-        {err && <p>{err}</p>}
-        <span>
-          Don't you have an account? <Link to="/register">Register</Link>
-        </span>
-      </form>
+          />
+          <input
+            required
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={handleChange}
+          />
+          <button type="submit">Login</button>
+          {err && <p>{err}</p>}
+          <span className="register">
+            Don't you have an account? <Link to="/register">Register</Link>
+          </span>
+        </form>
+      </div>
+      <div className="auth-right">
+      </div>
     </div>
   );
 };

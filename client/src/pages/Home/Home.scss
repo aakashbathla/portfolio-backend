@@ -7,12 +7,18 @@
     .posts {
       margin-top: 50px;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 150px;
 
       .post {
-        display: flex;
+        display: block;
+        width: 33%;
         gap: 100px;
+        background-color: #101021;
+        margin-bottom: 100px;
+        padding: 20px;
+        color: white;
+        border-radius: 10px;
        
         &:nth-child(2n) {
           flex-direction: row-reverse;
