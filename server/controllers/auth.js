@@ -46,9 +46,8 @@ export const login = (req, res) => {
       return res
         .cookie("access_token", token, {
           path: "/",
-          domain: ".",
+          domain: ".vercel.app",
           sameSite: "none",
-          secure: true,
         })
         .status(200)
         .json(other);
@@ -63,9 +62,8 @@ export const logout = (req, res) => {
     return res
       .clearCookie("access_token", {
         path: "/",
-        domain: ".",
+        domain: ".vercel.app",
         sameSite: "none",
-        secure: true,
       })
       .status(200)
       .json("User has been logged out.");
