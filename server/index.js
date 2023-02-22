@@ -21,8 +21,7 @@ const storage = multer.diskStorage({
 
     // check if upload directory exists
     if (!fs.existsSync(uploadDir)) {
-      console.error(`Upload directory ${uploadDir} does not exist.`);
-      return cb(new Error("Internal server error"));
+      fs.mkdirSync(uploadDir);
     }
 
     // check if file path is writable
