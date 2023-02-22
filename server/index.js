@@ -6,6 +6,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import multer from "multer";
 import path from "path";
+import fs from "fs";
 const app = express();
 
 app.use("/uploads", express.static("uploads"));
@@ -15,7 +16,24 @@ app.use(cookieParser());
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "uploads/");
+    const uploadDir = "uploads/"; // directory to store uploaded files
+    const fullPath = path.join(uploadDir, file.originalname); // generate full file path
+
+    // check if upload directory exists
+    if (!fs.existsSync(uploadDir)) {
+      console.error(`Upload directory ${uploadDir} does not exist.`);
+      return cb(new Error("Internal server error"));
+    }
+
+    // check if file path is writable
+    fs.access(fullPath, fs.constants.W_OK, (err) => {
+      if (err) {
+        console.error(`File path ${fullPath} is not writable: ${err.message}`);
+        return cb(new Error("Internal server error"));
+      }
+
+      cb(null, uploadDir);
+    });
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
