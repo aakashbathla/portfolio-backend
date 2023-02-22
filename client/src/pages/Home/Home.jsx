@@ -28,7 +28,7 @@ export default function Home() {
                 {posts.length > 0 && posts.map(post => (
                     <div className="post" key={post.id}>
                         <div className="img">
-                            <img src={`${process.env.REACT_APP_BASE_URL}${post.post_img}`} alt="" />
+                            <img src={`${post.post_img}`} alt="" />
                         </div>
                         <div className="content">
                             <Link className="link" to={`/post/${post.id}`}>

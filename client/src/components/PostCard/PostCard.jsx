@@ -21,7 +21,7 @@ export default function PostCard({ post, userPage, handleDelete ,setPostId,linkT
             }
             <Link className="link" to={linkTo} state={post}>
                 <div className="img" >
-                    <img src={`${process.env.REACT_APP_BASE_URL}/uploads/${post.post_img}`} alt="" />
+                    <img src={`${post.post_img}`} alt="" />
                 </div>
                 <div className="content">
                     <h2>{post.title}</h2>

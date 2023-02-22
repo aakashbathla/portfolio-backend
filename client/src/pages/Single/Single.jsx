@@ -51,9 +51,9 @@ export default function Single() {
     return (
         <div className="single-container">
             <div className="content">
-                <img src={`../upload/${post?.post_img}`} alt="" />
+                <img src={`${post?.post_img}`} alt="" />
                 <div className="user">
-                    <img src={`../upload/${post?.user_img}`} alt="" />
+                    <img src={`${post?.user_img}`} alt="" />
                     <div className="info">
                         <span>{post?.user_name}</span>
                         <p>Posted {moment(post.post_created_date).fromNow()}</p>

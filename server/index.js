@@ -7,6 +7,8 @@ import cookieParser from "cookie-parser";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
+import { v2 as cloudinary } from "cloudinary";
+import { CloudinaryStorage } from "multer-storage-cloudinary";
 const app = express();
 
 app.use("/uploads", express.static("uploads"));
@@ -14,34 +16,22 @@ app.use(express.json());
 app.use(cors({ credentials: true, origin: true }));
 app.use(cookieParser());
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const uploadDir = "uploads/"; // directory to store uploaded files
-    const fullPath = path.join(uploadDir, file.originalname); // generate full file path
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
-    // check if upload directory exists
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir);
-    }
-
-    // check if file path is writable
-    fs.access(fullPath, fs.constants.W_OK, (err) => {
-      if (err) {
-        console.error(`File path ${fullPath} is not writable: ${err.message}`);
-        return cb(new Error("Internal server error"));
-      }
-
-      cb(null, uploadDir);
-    });
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, Date.now() + file.originalname);
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: process.env.CLOUDINARY_FOLDER_NAME, // folder name for uploaded files
+    allowed_formats: ["jpg", "jpeg", "png", "gif"], // allowed file formats
+    public_id: (req, file) => Date.now() + "-" + file.originalname, // generate unique public ID for each file
   },
 });
 
 const upload = multer({ storage });
-console.log("aakash");
 app.post("/api/upload", upload.single("file"), function (req, res) {
   console.log(req);
   const file = req.file.path;
