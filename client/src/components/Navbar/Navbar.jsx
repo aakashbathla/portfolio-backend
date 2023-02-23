@@ -42,7 +42,7 @@ export default function Navbar() {
           img={
             currentUser && currentUser.user_img ?
               <div>
-                <img src={`../upload/${currentUser.user_img}`} alt="user-img" />
+                <img src={`${currentUser.user_img}`} alt="user-img" />
               </div>
               : <img src={login} alt="loing-icon" />
           }

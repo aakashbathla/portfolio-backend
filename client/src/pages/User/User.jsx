@@ -45,6 +45,7 @@ export default function User() {
     }
 
     const handleSubmit = async (e) => {
+        debugger
         e.preventDefault()
         const img = await upload()
         try {
@@ -58,13 +59,13 @@ export default function User() {
 
     useEffect(() => {
         getUserPosts()
-    }, [currentUser,handleDelete])
+    }, [handleDelete])
 
     return (
         <div className="user-container">
             <section className="user-info-container">
                 User Page
-                <img className="user-img" src={`../upload/${currentUser?.user_img}`} alt="user-img" />
+                <img className="user-img" src={`${currentUser?.user_img}`} alt="user-img" />
                 <label htmlFor=""><b> Name:</b> </label>
                 <input type="text" value={userName} placeholder="User name" name="user_name"
                     onChange={e => setUserName(e.target.value)} />
