@@ -4,8 +4,10 @@
 .single-container {
     display: flex;
     gap: 50px;
+    margin: 60px;
 
     .content {
+      margin-bottom: 100px;
       display: flex;
       flex-direction: column;
       gap: 30px;
@@ -13,7 +15,7 @@
       img {
         width: 100%;
         height: 300px;
-        object-fit: cover;
+        object-fit: contain;
       }
 
       .user {

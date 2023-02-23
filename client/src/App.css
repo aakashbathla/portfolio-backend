@@ -4,5 +4,6 @@ body {
 }
 
 .app {
-  background-color: white;
+  background-color: aliceblue;
+  min-height: 100vh;
 }

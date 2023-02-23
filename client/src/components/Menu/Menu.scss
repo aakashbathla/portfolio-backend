@@ -16,11 +16,14 @@
           display: flex;
           flex-direction: column;
           gap: 10px;
+          padding: 25px;
+          background: #f6d15b;
+          border-radius: 20px;
 
           img {
             width: 100%;
             height: 200px;
-            object-fit: cover;
+            object-fit: contain;
           }
 
           h2 {

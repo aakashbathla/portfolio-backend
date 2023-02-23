@@ -8,18 +8,17 @@
       margin-top: 50px;
       display: flex;
       flex-direction: row;
-      gap: 150px;
+      justify-content: space-between;
+      flex-wrap: wrap;
 
       .post {
         display: block;
-        width: 33%;
-        gap: 100px;
+        width: calc(30% - 20px);
         background-color: #101021;
         margin-bottom: 100px;
-        padding: 20px;
         color: white;
         border-radius: 10px;
-       
+        padding: 20px;
         &:nth-child(2n) {
           flex-direction: row-reverse;
         }
@@ -41,9 +40,8 @@
 
           img {
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
             height: 230px;
-
           }
         }
 
@@ -55,12 +53,17 @@
           h1 {
             font-size: 48px;
           }
-          .content-description {
-            height: 120px;
-            width: 100%;
+          .content-description{
+            height: 85px;
+            overflow-y: hidden;
             text-overflow: ellipsis;
-            overflow: hidden;
-            font-size: 18px;
+            margin-bottom: 10px;
+            p {
+              width: 100%;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              font-size: 18px;
+            }
           }
 
           button {

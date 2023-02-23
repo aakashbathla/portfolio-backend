@@ -2,6 +2,7 @@
 
 
 .write {
+    margin: 60px;
     margin-top: 20px;
     display: flex;
     gap: 20px;
@@ -82,4 +83,7 @@
     padding: 3px 5px;
   }
 }
+}
+.ql-editor{
+  min-height: 257px;
 }

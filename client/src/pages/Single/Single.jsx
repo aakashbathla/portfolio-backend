@@ -51,7 +51,9 @@ export default function Single() {
     return (
         <div className="single-container">
             <div className="content">
-                <img src={`${post?.post_img}`} alt="" />
+                <div className="post-contain">
+                    <img src={`${post?.post_img}`} alt="" />
+                </div>
                 <div className="user">
                     <img src={`${post?.user_img}`} alt="" />
                     <div className="info">
