@@ -26,19 +26,6 @@ export default function Write() {
       // ["clean"],
     ],
   };
-  const formats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-  ];
   const [value, setValue] = useState(state ? state.description : "");
   const [title, setTitle] = useState(state ? state.title : "");
   const [file, setFile] = useState(state ? state.post_img : "");
@@ -122,7 +109,7 @@ export default function Write() {
           <div>
             <input
               type="radio"
-              checked={isPublished == 1}
+              checked={isPublished === 1}
               name="Published"
               value={1}
               id="published"
@@ -133,7 +120,7 @@ export default function Write() {
           <div>
             <input
               type="radio"
-              checked={isPublished == 0}
+              checked={isPublished === 0}
               name="Save as draft"
               value={0}
               id="save-as"
