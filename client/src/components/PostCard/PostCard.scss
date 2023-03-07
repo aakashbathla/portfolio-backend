@@ -43,14 +43,14 @@
     padding: 7.5px 15px;
     border: none;
     cursor: pointer;
-    color: teal;
+    color: #000080;
     background-color: white;
-    border: 1px solid teal;
+    border-radius: 10px;
 
     &:hover {
       border: 1px solid white;
-      background-color: $lightGreen;
-      color: black;
+      background-color: aliceblue;
+      color: #000080;
     }
   }
 }

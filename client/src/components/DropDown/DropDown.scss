@@ -48,5 +48,12 @@
     line-height: 1.6em;
     background-color: $lightGreen;
     text-align: center;
+    z-index: 1;
+    border-radius: 10px;
+    .drop-down-list{
+      p{
+        color: white;
+      }
+    }
   }
   

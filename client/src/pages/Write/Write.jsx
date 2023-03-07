@@ -94,14 +94,13 @@ export default function Write() {
           placeholder="Title"
           onChange={(e) => setTitle(e.target.value)}
         />
-        <div className="editorContainer">
-          <ReactQuill
-            theme="snow"
-            modules={modules}
-            value={value}
-            onChange={setValue}
-          />
-        </div>
+
+        <ReactQuill
+          theme="snow"
+          modules={modules}
+          value={value}
+          onChange={setValue}
+        />
       </div>
       <div className="menu">
         <div className="item">
@@ -150,7 +149,7 @@ export default function Write() {
               id="art"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="art">Art</label>
+            <label htmlFor="art">Daily Todo</label>
           </div>
           <div>
             <input
@@ -161,7 +160,7 @@ export default function Write() {
               id="Food"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Food">Food</label>
+            <label htmlFor="Food">Office Work</label>
           </div>
           <div>
             <input
@@ -172,7 +171,7 @@ export default function Write() {
               id="Technology"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Technology">Technology</label>
+            <label htmlFor="Technology">Gym</label>
           </div>
           <div>
             <input
@@ -183,7 +182,7 @@ export default function Write() {
               id="Science"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Science">Science</label>
+            <label htmlFor="Science">Study</label>
           </div>
           <div>
             <input
@@ -194,7 +193,73 @@ export default function Write() {
               id="Sport"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">Sport</label>
+            <label htmlFor="Sport">English</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "sport"}
+              name="cat"
+              value="Sport"
+              id="Sport"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="Sport">Technical</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "sport"}
+              name="cat"
+              value="Sport"
+              id="Sport"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="Sport">Novels</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "sport"}
+              name="cat"
+              value="Sport"
+              id="Sport"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="Sport">Personal</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "sport"}
+              name="cat"
+              value="Sport"
+              id="Sport"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="Sport">React.js</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "sport"}
+              name="cat"
+              value="Sport"
+              id="Sport"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="Sport">Node.js</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "sport"}
+              name="cat"
+              value="Sport"
+              id="Sport"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="Sport">Vue.js</label>
           </div>
         </div>
         <div className="buttons">

@@ -2,10 +2,13 @@
 
 
 .write {
-    margin: 60px;
-    margin-top: 20px;
+    padding: 60px;
+    margin-top: 40px;
     display: flex;
     gap: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+
 
     .content {
       flex: 5;
@@ -18,16 +21,10 @@
         border: 1px solid lightgray;
       }
 
-      .editorContainer {
-        height: 300px;
-        overflow: scroll;
-        border: 1px solid lightgray;
 
-        .editor {
-          height: 100%;
-          border: none;
+        .quill {
+          height: 257px
         }
-      }
     }
 
 .menu {
@@ -83,7 +80,4 @@
     padding: 3px 5px;
   }
 }
-}
-.ql-editor{
-  min-height: 257px;
 }

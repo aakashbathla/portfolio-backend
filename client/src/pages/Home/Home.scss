@@ -2,8 +2,6 @@
 
 
 .home-container {
-  margin-left: 10%;
-  margin-right: 10%;
     .posts {
       margin-top: 50px;
       display: flex;
@@ -14,7 +12,7 @@
       .post {
         display: block;
         width: calc(30% - 20px);
-        background-color: #101021;
+        background-color: aliceblue;
         margin-bottom: 100px;
         color: white;
         border-radius: 10px;
@@ -72,13 +70,12 @@
             border: none;
             cursor: pointer;
             background-color: white;
-            border: 1px solid teal;
-            color: teal;
+            color: #000080;
+            border-radius: 20px;
 
             &:hover {
               border: 1px solid white;
-              background-color: $lightGreen;
-              color: black;
+              background-color: aliceblue;
             }
           }
         }

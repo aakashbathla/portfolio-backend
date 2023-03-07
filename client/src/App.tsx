@@ -5,15 +5,19 @@ import Write from "./pages/Write/Write";
 import Home from "./pages/Home/Home";
 import Single from "./pages/Single/Single";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import "./App.css"
+import Tags from "./components/Tags/Tags";
+import "./App.css";
 import User from "./pages/User/User";
 const Layout = ({ children }: any) => {
   return (
     <>
-      <Navbar />
-      {children}
-      <Footer />
+      <div className="app-container">
+        <div className="app-book">
+          <Navbar />
+          <Tags />
+          {children}
+        </div>
+      </div>
     </>
   );
 };
@@ -21,17 +25,16 @@ const Layout = ({ children }: any) => {
 function App() {
   return (
     <div className="app">
-        <BrowserRouter >
-          <Routes>
-            <Route path="/register" element={< Register />} />
-            <Route path="/login" element={< Login />} />
-            <Route path="/" element={<Layout children={<Home />} />} />
-            <Route path="/post/:id" element={<Layout children={<Single />} />} />
-            <Route path="/write" element={<Layout children={<Write />} />} />
-            <Route path="/user/:id" element={<Layout children={<User />} />} />
-
-          </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Layout children={<Home />} />} />
+          <Route path="/post/:id" element={<Layout children={<Single />} />} />
+          <Route path="/write" element={<Layout children={<Write />} />} />
+          <Route path="/user/:id" element={<Layout children={<User />} />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

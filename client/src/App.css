@@ -7,3 +7,13 @@ body {
   background-color: aliceblue;
   min-height: 100vh;
 }
+.app-container {
+  max-width: 1100px;
+  margin: 0px auto;
+}
+.app-book {
+  border-radius: 20px;
+  padding: 40px;
+  min-height: calc(100vh - 80px);
+  background-color: white;
+}
