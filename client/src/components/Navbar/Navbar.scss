@@ -1,69 +1,69 @@
 @import "../../stylesheets/variables.scss";
 
-    .nav-container {
-      padding: 10px 0px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      .logo {
-        .logo-text-container{
-          text-decoration: none;
-          .logo-text {
-            font-size: 30px;
-            font-weight: 300px;
-            color: $lightGreen;
-          }
-        }
-        img {
-          width: 300px;
-        }
-      }
-      .links {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        max-width: 300px;
-
-        h6 {
-          font-size: 16px;
-          font-weight: 300px;
-        }
-
-        span {
-          cursor: pointer;
-        }
-
-        .write {
-          background-color: $lightGreen;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 300px;
-          border: 1px solid white;
-
-          &:hover {
-            color: teal;
-            background-color: white;
-            border: 1px solid teal;
-          }
-        }
+.nav-container {
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  .logo {
+    .logo-text-container {
+      text-decoration: none;
+      .logo-text {
+        font-size: 30px;
+        font-weight: 300px;
+        color: $lightGreen;
       }
     }
-  .user{
-    display: flex;
-    align-items: center;
-    img{
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-left: 50px;
-    }
-    .drop-down-list{
-      width: 150px;
+    img {
+      width: 300px;
     }
   }
+}
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  h6 {
+    font-size: 16px;
+    font-weight: 300px;
+  }
+
+  span {
+    cursor: pointer;
+  }
+
+  .write {
+    background-color: $lightGreen;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300px;
+    border: 1px solid white;
+
+    &:hover {
+      color: teal;
+      background-color: white;
+      border: 1px solid teal;
+    }
+  }
+}
+.user {
+  display: flex;
+  align-items: center;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 50px;
+  }
+  .drop-down-list {
+    width: 150px;
+  }
+}
