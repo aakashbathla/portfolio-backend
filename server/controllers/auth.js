@@ -36,7 +36,7 @@ export const login = (req, res) => {
       console.log(data);
       const isPasswordCorrect = bcrypt.compareSync(
         req.body.password,
-        data[0].password
+        data[0].PASSWORD
       ); // true
       if (!isPasswordCorrect)
         return res.status(400).json("Wrong email or password");
