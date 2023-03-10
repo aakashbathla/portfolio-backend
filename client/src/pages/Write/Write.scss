@@ -1,33 +1,30 @@
 @import "../../stylesheets/variables.scss";
 
-
 .write {
-    padding: 60px;
-    margin-top: 40px;
+  padding: 60px;
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  .content {
+    flex: 5;
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    background-color: aliceblue;
-    border-radius: 20px;
 
-
-    .content {
-      flex: 5;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      input {
-        padding: 10px;
-        border: 1px solid lightgray;
-      }
-
-
-        .quill {
-          height: 257px
-        }
+    input {
+      padding: 10px;
+      border: 1px solid lightgray;
     }
 
-.menu {
+    .quill {
+      height: 257px;
+    }
+  }
+
+  .menu {
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -36,48 +33,61 @@
     .item {
       border: 1px solid lightgray;
       padding: 10px;
-      flex:1;
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      font-size: 12px;
+      font-size: 14px;
       color: #555;
+      gap: 10px;
 
-      h1{
+      h1 {
         font-size: 20px;
       }
 
-      .file{
+      .file {
         text-decoration: underline;
         cursor: pointer;
       }
 
-      .cat{
+      .cat {
         display: flex;
         align-items: center;
         gap: 2px;
         color: teal;
       }
     }
-}
-
-.buttons{
-  display: flex;
-  justify-content:center;
-
-  :first-child{
-    cursor: pointer;
-    color: teal;
-    background-color: white;
-    border: 1px solid teal;
-    padding: 3px 5px;
   }
-  :last-child{
-    cursor: pointer;
-    color: white;
-    background-color: teal;
-    border: 1px solid teal;
-    padding: 3px 5px;
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+
+    :first-child {
+      cursor: pointer;
+      color: teal;
+      background-color: white;
+      border: 1px solid teal;
+      padding: 3px 5px;
+    }
+    :last-child {
+      cursor: pointer;
+      color: white;
+      background-color: teal;
+      border: 1px solid teal;
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 10px;
+    }
   }
 }
+.quill {
+  .ql-container {
+    height: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .write {
+    padding: 10px;
+  }
 }

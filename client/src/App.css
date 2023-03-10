@@ -17,3 +17,8 @@ body {
   min-height: calc(100vh - 80px);
   background-color: white;
 }
+@media screen and (max-width: 768px) {
+  .app-book {
+    padding: 10px;
+  }
+}
