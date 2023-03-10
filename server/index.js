@@ -13,7 +13,12 @@ const app = express();
 
 app.use("/uploads", express.static("uploads"));
 app.use(express.json());
-app.use(cors({ credentials: true, origin: true }));
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://portfolio-backend-ebon.vercel.app",
+  })
+);
 app.use(cookieParser());
 
 cloudinary.config({
