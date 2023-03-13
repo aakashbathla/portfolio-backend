@@ -8,8 +8,8 @@ export const AuthContextProvider = ({ children }) => {
     JSON.parse(localStorage.getItem("user")) || null
   );
 
-  const login = async (inputs) => {
-    await axios
+  const login = (inputs) => {
+    axios
       .post(`${process.env.REACT_APP_BASE_URL}api/auth/login`, inputs, {
         withCredentials: true,
       })
