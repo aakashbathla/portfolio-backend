@@ -59,7 +59,7 @@ export default function Single() {
     <div className="single-container">
       <div className="content">
         <div className="post-contain">
-          <img src={`${post?.post_img}`} alt="" />
+          {post.post_img && <img src={`${post?.post_img}`} alt="" />}
         </div>
         <div className="user">
           <img src={`${post?.user_img}`} alt="" />
