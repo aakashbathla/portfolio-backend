@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "https://portfolio-backend-ebon.vercel.app",
+    origin: "*",
   })
 );
 app.use(cookieParser());
