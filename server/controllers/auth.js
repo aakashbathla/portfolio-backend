@@ -49,7 +49,7 @@ export const login = (req, res) => {
           path: "/",
           domain: `${process.env.DOMAIN}`,
           sameSite: "none",
-          secure: `${process.env.SECURE}`,
+          secure: true,
         })
         .status(200)
         .json(other);
