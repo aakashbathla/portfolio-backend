@@ -48,7 +48,7 @@ export const login = (req, res) => {
         .cookie("access_token", token, {
           path: "/",
           domain: `${process.env.DOMAIN}`,
-          sameSite: "none",
+          sameSite: "Lax",
           secure: true,
         })
         .status(200)
