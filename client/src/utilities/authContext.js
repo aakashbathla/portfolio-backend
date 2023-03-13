@@ -9,21 +9,19 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}api/auth/login`,
-      inputs,
-      { withCredentials: true }
-    );
-    debugger;
-    const cookie = res.headers["set-cookie"];
-
-    // Save the cookie in local cookie storage
-    if (cookie) {
-      document.cookie = cookie;
-    }
-    console.log(cookie);
-
-    setCurrentUser(res.data);
+    await axios
+      .post(`${process.env.REACT_APP_BASE_URL}api/auth/login`, inputs, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        const cookie = res.headers["set-cookie"];
+        // Save the cookie in local cookie storage
+        if (cookie) {
+          document.cookie = cookie;
+        }
+        console.log(cookie);
+        setCurrentUser(res.data);
+      });
   };
 
   const logout = async (inputs) => {
