@@ -15,12 +15,13 @@ export const AuthContextProvider = ({ children }) => {
       { withCredentials: true }
     );
     debugger;
-    const cookie = res.headers.get("set-cookie");
+    const cookie = res.headers["set-cookie"];
 
     // Save the cookie in local cookie storage
     if (cookie) {
       document.cookie = cookie;
     }
+    console.log(cookie);
 
     setCurrentUser(res.data);
   };
