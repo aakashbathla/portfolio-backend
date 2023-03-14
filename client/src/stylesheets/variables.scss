@@ -9,5 +9,6 @@ input {
   max-width: 100%; /* Set the maximum width of input fields to 100% */
   max-height: 100%; /* Set the maximum height of input fields to 100% */
   overflow: hidden; /* Hide any overflow */
-  -webkit-text-size-adjust: none; /* Disable text resizing on iOS */
+  -webkit-text-size-adjust: 100%; /* Disable text resizing on iOS */
+  -ms-text-size-adjust: 100%;
 }
