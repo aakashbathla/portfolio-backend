@@ -61,7 +61,7 @@ export default function Write() {
             `${process.env.REACT_APP_BASE_URL}api/posts/${state.id}`,
             {
               title,
-              description: value,
+              description: value.replace("<p><br></p>", ""),
               cat,
               post_img: imgUrl,
               isPublished: isPublished,
@@ -72,7 +72,7 @@ export default function Write() {
             `${process.env.REACT_APP_BASE_URL}api/posts/`,
             {
               title,
-              description: value,
+              description: value.replace("<p><br></p>", ""),
               cat,
               post_img: imgUrl,
               date: moment(Date.now()).format("YYYY-MM-DD HH:mm"),
@@ -143,123 +143,123 @@ export default function Write() {
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "art"}
+              checked={cat.toLowerCase() === "daily"}
               name="cat"
-              value="Art"
-              id="art"
+              value="daily"
+              id="daily"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="art">Daily Todo</label>
+            <label htmlFor="daily">Daily Todo</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "food"}
+              checked={cat.toLowerCase() === "office"}
               name="cat"
-              value="Food"
-              id="Food"
+              value="office"
+              id="office"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Food">Office Work</label>
+            <label htmlFor="office">Office Work</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "technology"}
+              checked={cat.toLowerCase() === "gym"}
               name="cat"
-              value="Technology"
-              id="Technology"
+              value="gym"
+              id="gym"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Technology">Gym</label>
+            <label htmlFor="gym">Gym</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "science"}
+              checked={cat.toLowerCase() === "study"}
               name="cat"
-              value="Science"
-              id="Science"
+              value="study"
+              id="study"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Science">Study</label>
+            <label htmlFor="study">Study</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "english"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="english"
+              id="english"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">English</label>
+            <label htmlFor="english">English</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "technical"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="technical"
+              id="technical"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">Technical</label>
+            <label htmlFor="technical">Technical</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "novels"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="novels"
+              id="novels"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">Novels</label>
+            <label htmlFor="novels">Novels</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "personal"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="personal"
+              id="personal"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">Personal</label>
+            <label htmlFor="personal">Personal</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "react"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="react"
+              id="react"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">React.js</label>
+            <label htmlFor="react">React.js</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "node"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="node"
+              id="node"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">Node.js</label>
+            <label htmlFor="node">Node.js</label>
           </div>
           <div>
             <input
               type="radio"
-              checked={cat.toLowerCase() === "sport"}
+              checked={cat.toLowerCase() === "vue"}
               name="cat"
-              value="Sport"
-              id="Sport"
+              value="vue"
+              id="vue"
               onChange={(e) => setCat(e.target.value)}
             />
-            <label htmlFor="Sport">Vue.js</label>
+            <label htmlFor="vue">Vue.js</label>
           </div>
         </div>
         <div className="buttons">
