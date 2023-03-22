@@ -2,6 +2,7 @@ import axios from "axios";
 import moment from "moment";
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
+
 import "react-quill/dist/quill.snow.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Write.scss";
@@ -10,7 +11,6 @@ export default function Write() {
   const state = useLocation().state;
   const modules = {
     toolbar: [
-      [{ font: [] }],
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
       ["bold", "italic", "underline", "strike"],
       [{ color: [] }, { background: [] }],
