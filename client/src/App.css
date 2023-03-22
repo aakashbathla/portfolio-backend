@@ -33,4 +33,6 @@ pre {
   color: greenyellow !important;
   padding: 10px !important;
   border-radius: 5px !important;
+  white-space: pre-wrap;
+  overflow-x: auto;
 }
