@@ -27,3 +27,10 @@ p:has(br) {
   line-height: 0 !important;
   margin: 0 !important;
 }
+
+pre {
+  background-color: black !important;
+  color: greenyellow !important;
+  padding: 10px !important;
+  border-radius: 5px !important;
+}
