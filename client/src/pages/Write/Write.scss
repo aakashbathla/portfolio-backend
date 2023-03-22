@@ -53,7 +53,7 @@
         display: flex;
         align-items: center;
         gap: 2px;
-        color: teal;
+        color: #000070;
       }
     }
   }
@@ -64,16 +64,16 @@
 
     :first-child {
       cursor: pointer;
-      color: teal;
+      color: #000070;
       background-color: white;
-      border: 1px solid teal;
+      border: 1px solid #000070;
       padding: 3px 5px;
     }
     :last-child {
       cursor: pointer;
       color: white;
-      background-color: teal;
-      border: 1px solid teal;
+      background-color: #000070;
+      border: 1px solid #000070;
       padding: 10px 20px;
       font-size: 20px;
       border-radius: 10px;

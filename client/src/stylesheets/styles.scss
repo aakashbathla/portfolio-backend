@@ -22,7 +22,7 @@ $lightGreen: #8dbebe;
 
       h1 {
         font-size: 20px;
-        color: teal;
+        color: #000080;
         margin-bottom: 20px;
       }
 
@@ -43,7 +43,7 @@ $lightGreen: #8dbebe;
         button {
           padding: 10px;
           border: none;
-          background-color: teal;
+          background-color: #000080;
           cursor: pointer;
           color: white;
         }
@@ -100,9 +100,9 @@ $lightGreen: #8dbebe;
             border: 1px solid white;
 
             &:hover {
-              color: teal;
+              color: #000080;
               background-color: white;
-              border: 1px solid teal;
+              border: 1px solid #000080;
             }
           }
         }
@@ -183,8 +183,8 @@ $lightGreen: #8dbebe;
               border: none;
               cursor: pointer;
               background-color: white;
-              border: 1px solid teal;
-              color: teal;
+              border: 1px solid #000080;
+              color: #000080;
 
               &:hover {
                 border: 1px solid white;
@@ -284,9 +284,9 @@ $lightGreen: #8dbebe;
             padding: 7.5px 15px;
             border: none;
             cursor: pointer;
-            color: teal;
+            color: #000080;
             background-color: white;
-            border: 1px solid teal;
+            border: 1px solid #000080;
 
             &:hover {
               border: 1px solid white;
@@ -337,47 +337,47 @@ $lightGreen: #8dbebe;
         .item {
           border: 1px solid lightgray;
           padding: 10px;
-          flex:1;
+          flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           font-size: 12px;
           color: #555;
 
-          h1{
+          h1 {
             font-size: 20px;
           }
 
-          .file{
+          .file {
             text-decoration: underline;
             cursor: pointer;
           }
 
-          .buttons{
+          .buttons {
             display: flex;
             justify-content: space-between;
 
-            :first-child{
+            :first-child {
               cursor: pointer;
-              color: teal;
+              color: #000080;
               background-color: white;
-              border: 1px solid teal;
+              border: 1px solid #000080;
               padding: 3px 5px;
             }
-            :last-child{
+            :last-child {
               cursor: pointer;
               color: white;
-              background-color: teal;
-              border: 1px solid teal;
+              background-color: #000080;
+              border: 1px solid #000080;
               padding: 3px 5px;
             }
           }
 
-          .cat{
+          .cat {
             display: flex;
             align-items: center;
             gap: 2px;
-            color: teal;
+            color: #000080;
           }
         }
       }

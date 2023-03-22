@@ -1,49 +1,48 @@
 @import "../../stylesheets/variables.scss";
 
+.menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 
-    .menu {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
+  h1 {
+    font-size: 20px;
+    color: #555;
+  }
 
-        h1 {
-          font-size: 20px;
-          color: #555;
-        }
+  .post {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px;
+    background: aliceblue;
+    border-radius: 20px;
 
-        .post {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          padding: 25px;
-          background: aliceblue;
-          border-radius: 20px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+    }
 
-          img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-          }
+    h2 {
+      color: #555;
+    }
 
-          h2 {
-            color: #555;
-          }
+    button {
+      width: max-content;
+      padding: 7.5px 15px;
+      border: none;
+      cursor: pointer;
+      color: #000080;
+      background-color: white;
+      border: 1px solid #000080;
 
-          button {
-            width: max-content;
-            padding: 7.5px 15px;
-            border: none;
-            cursor: pointer;
-            color: teal;
-            background-color: white;
-            border: 1px solid teal;
-
-            &:hover {
-              border: 1px solid white;
-              background-color: $lightGreen;
-              color: black;
-            }
-          }
-        }
+      &:hover {
+        border: 1px solid white;
+        background-color: $lightGreen;
+        color: black;
       }
+    }
+  }
+}
