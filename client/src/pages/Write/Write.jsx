@@ -55,13 +55,14 @@ export default function Write() {
   const handleClick = async (e) => {
     e.preventDefault();
     const imgUrl = await upload();
+    const description = value.replace(/(<p><br><\/p>)+/g, "<p><br></p>");
     try {
       state
         ? await axios.put(
             `${process.env.REACT_APP_BASE_URL}api/posts/${state.id}`,
             {
               title,
-              description: value.replace("<p><br></p>", ""),
+              description: description,
               cat,
               post_img: imgUrl,
               isPublished: isPublished,
@@ -72,7 +73,7 @@ export default function Write() {
             `${process.env.REACT_APP_BASE_URL}api/posts/`,
             {
               title,
-              description: value.replace("<p><br></p>", ""),
+              description: description,
               cat,
               post_img: imgUrl,
               date: moment(Date.now()).format("YYYY-MM-DD HH:mm"),
