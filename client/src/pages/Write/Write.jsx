@@ -113,7 +113,7 @@ export default function Write() {
               name="Published"
               value={1}
               id="published"
-              onChange={(e) => setIsPublished(e.target.value)}
+              onChange={(e) => setIsPublished(parseInt(e.target.value))}
             />
             <label htmlFor="published"> Published</label>
           </div>
@@ -121,12 +121,12 @@ export default function Write() {
             <input
               type="radio"
               checked={isPublished === 0}
-              name="Save as draft"
+              name="Published"
               value={0}
               id="save-as"
-              onChange={(e) => setIsPublished(e.target.value)}
+              onChange={(e) => setIsPublished(parseInt(e.target.value))}
             />
-            <label htmlFor="save-as"> Save as draft</label>
+            <label htmlFor="save-as"> Private</label>
           </div>
 
           <label htmlFor="file">

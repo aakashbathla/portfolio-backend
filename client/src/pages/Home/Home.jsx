@@ -1,17 +1,27 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Home.scss";
+import { AuthContext } from "../../utilities/authContext";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
+  const { setCurrentUser, currentUser } = useContext(AuthContext);
   const cat = useLocation().search;
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get(
-          `${process.env.REACT_APP_BASE_URL}api/posts${cat}`
-        );
+        let res;
+        if (currentUser && currentUser.id) {
+          res = await axios.get(
+            `${process.env.REACT_APP_BASE_URL}api/posts/users${cat}`,
+            { withCredentials: true }
+          );
+        } else {
+          res = await axios.get(
+            `${process.env.REACT_APP_BASE_URL}api/posts${cat}`
+          );
+        }
         if (res.status === 200) {
           return setPosts(res.data);
         }
