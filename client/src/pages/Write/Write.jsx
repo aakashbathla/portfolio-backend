@@ -1,11 +1,14 @@
 import axios from "axios";
 import moment from "moment";
 import React, { useState } from "react";
-import ReactQuill from "react-quill";
-
+import ReactQuill, { Quill } from "react-quill";
+import * as Emoji from "quill-emoji";
 import "react-quill/dist/quill.snow.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Write.scss";
+import "quill-emoji/dist/quill-emoji.css";
+
+Quill.register("modules/emoji", Emoji);
 
 export default function Write() {
   const state = useLocation().state;
@@ -18,6 +21,7 @@ export default function Write() {
       ["blockquote", "code-block"],
       [{ list: "ordered" }, { list: "bullet" }],
       // [{ indent:  "-1" }, { indent:  "+1" }, { align: [] }],
+      ["emoji"],
       [
         // "link",
         "image",
@@ -25,6 +29,9 @@ export default function Write() {
       ],
       // ["clean"],
     ],
+    "emoji-toolbar": true,
+    "emoji-textarea": false,
+    "emoji-shortname": true,
   };
   const [value, setValue] = useState(state ? state.description : "");
   const [title, setTitle] = useState(state ? state.title : "");
