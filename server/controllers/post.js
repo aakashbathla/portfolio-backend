@@ -26,7 +26,7 @@ export const getPost = (req, res) => {
   try {
     db.connect();
     const postId = req.params.id;
-    const q = `SELECT * FROM users INNER JOIN posts ON users.id = posts.user_id WHERE posts.id=? ${filterQuery}`;
+    const q = `SELECT * FROM users INNER JOIN posts ON users.id = posts.user_id WHERE posts.id=? ${filterUserQuery}`;
     db.query(q, [postId], (err, data) => {
       if (err) return res.status(500).json(err);
       return res.status(200).json(data[0]);
