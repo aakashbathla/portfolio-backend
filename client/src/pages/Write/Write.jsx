@@ -3,12 +3,14 @@ import moment from "moment";
 import React, { useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import * as Emoji from "quill-emoji";
+import ImageSize from "quill-image-resize-module-react";
 import "react-quill/dist/quill.snow.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Write.scss";
 import "quill-emoji/dist/quill-emoji.css";
 
 Quill.register("modules/emoji", Emoji);
+Quill.register("modules/imageResize", ImageSize);
 
 export default function Write() {
   const state = useLocation().state;
@@ -29,6 +31,10 @@ export default function Write() {
       ],
       // ["clean"],
     ],
+    imageResize: {
+      parchment: Quill.import("parchment"),
+      modules: ["Resize", "DisplaySize"],
+    },
     "emoji-toolbar": true,
     "emoji-textarea": false,
     "emoji-shortname": true,
