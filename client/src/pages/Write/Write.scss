@@ -21,6 +21,9 @@
 
     .quill {
       height: 90vh;
+      // .ql-toolbar:nth-child(1) {
+      //   display: none;
+      // }
     }
   }
 
@@ -89,4 +92,31 @@
   .write {
     padding: 10px;
   }
+}
+table {
+  border: 1px solid #000070;
+  width: 100%;
+  // cell spacing as 0
+  border-spacing: 0;
+}
+
+table tbody {
+  border: 1px solid #000070;
+}
+
+table tr {
+  border: 1px solid #000070;
+}
+
+table td {
+  font-size: 16px;
+  border: 1px solid #000070;
+}
+td {
+  resize: both;
+  overflow: auto;
+  min-width: 50px;
+  max-width: 300px;
+  min-height: 20px;
+  max-height: 100px;
 }

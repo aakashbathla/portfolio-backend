@@ -1,20 +1,25 @@
 import axios from "axios";
 import moment from "moment";
 import React, { useState } from "react";
-import ReactQuill, { Quill } from "react-quill";
-import * as Emoji from "quill-emoji";
+import ReactQuill, { Quill } from "react-quill-with-table";
+import * as QuillTableUI from "quill-table-ui";
 import ImageSize from "quill-image-resize-module-react";
 import "react-quill/dist/quill.snow.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Write.scss";
-import "quill-emoji/dist/quill-emoji.css";
-
-Quill.register("modules/emoji", Emoji);
 Quill.register("modules/imageResize", ImageSize);
+Quill.register(
+  {
+    "modules/tableUI": QuillTableUI.default,
+  },
+  true
+);
 
 export default function Write() {
   const state = useLocation().state;
   const modules = {
+    table: true,
+    tableUI: true,
     toolbar: [
       [{ header: [1, 2, 3, 4, 5, 6, false] }],
       ["bold", "italic", "underline", "strike"],
@@ -22,23 +27,18 @@ export default function Write() {
       [{ script: "sub" }, { script: "super" }],
       ["blockquote", "code-block"],
       [{ list: "ordered" }, { list: "bullet" }],
-      // [{ indent:  "-1" }, { indent:  "+1" }, { align: [] }],
-      ["emoji"],
-      [
-        // "link",
-        "image",
-        // "video"
-      ],
-      // ["clean"],
+      [{ table: true }],
+      ["image"],
     ],
+    clipboard: {
+      matchVisual: false,
+    },
     imageResize: {
       parchment: Quill.import("parchment"),
       modules: ["Resize", "DisplaySize"],
     },
-    "emoji-toolbar": true,
-    "emoji-textarea": false,
-    "emoji-shortname": true,
   };
+
   const [value, setValue] = useState(state ? state.description : "");
   const [title, setTitle] = useState(state ? state.title : "");
   const [file, setFile] = useState(state ? state.post_img : "");
