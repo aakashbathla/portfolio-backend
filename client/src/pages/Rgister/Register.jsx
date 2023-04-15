@@ -2,28 +2,36 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Login/Login.scss"
+import "../Login/Login.scss";
 
 const Register = () => {
-  const [inputs, setInputs] = useState({ username: "", email: "", password: "" })
-  const [err, setErr] = useState(null)
-  const navigate=useNavigate()
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+  const [err, setErr] = useState(null);
+  const navigate = useNavigate();
 
-  const handleChange = e => {
-    setInputs(prev => { return { ...prev, [e.target.name]: e.target.value } });
+  const handleChange = (e) => {
+    setInputs((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${process.env.REACT_APP_BASE_URL}api/auth/register`, inputs)
+      const res = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}api/auth/register`,
+        inputs
+      );
       console.log(res);
-      navigate("/login")
+      navigate("/login");
     } catch (error) {
-      setErr(error.response.data)
+      setErr(error.response.data);
     }
-  }
-
+  };
 
   const getPosts = async () => {
     try {
@@ -32,7 +40,7 @@ const Register = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className="auth-container">
@@ -47,22 +55,21 @@ const Register = () => {
             type="text"
             placeholder="Username"
             name="username"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e)}
           />
           <input
             required
             type="email"
             placeholder="Email"
             name="email"
-            onChange={handleChange}
-
+            onChange={(e) => handleChange(e)}
           />
           <input
             required
             type="password"
             placeholder="Password"
             name="password"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e)}
           />
           <button type="submit">Register</button>
           {err && <p>{err}</p>}
@@ -71,8 +78,7 @@ const Register = () => {
           </span>
         </form>
       </div>
-      <div className="auth-right">
-      </div>
+      <div className="auth-right"></div>
     </div>
   );
 };

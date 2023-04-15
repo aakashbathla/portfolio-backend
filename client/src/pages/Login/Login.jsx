@@ -2,32 +2,33 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "../Login/Login.scss"
+import "../Login/Login.scss";
 import { AuthContext } from "../../utilities/authContext";
 
 const Register = () => {
-  const [inputs, setInputs] = useState({ email: "", password: "" })
-  const [err, setErr] = useState(null)
-  const navigate = useNavigate()
+  const [inputs, setInputs] = useState({ email: "", password: "" });
+  const [err, setErr] = useState(null);
+  const navigate = useNavigate();
 
-  const { login } = useContext(AuthContext)
+  const { login } = useContext(AuthContext);
 
-  const handleChange = e => {
-    setInputs(prev => { return { ...prev, [e.target.name]: e.target.value } });
+  const handleChange = (e) => {
+    setInputs((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await login(inputs)
-      navigate("/")
+      await login(inputs);
+      navigate("/");
     } catch (error) {
-      setErr(error.response.data)
+      setErr(error.response.data);
     }
-  }
+  };
 
   return (
-    
     <div className="auth-container">
       <div className="auth-left">
         <div className="login-header">
@@ -40,15 +41,14 @@ const Register = () => {
             type="email"
             placeholder="Email"
             name="email"
-            onChange={handleChange}
-
+            onChange={(e) => handleChange(e)}
           />
           <input
             required
             type="password"
             placeholder="Password"
             name="password"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e)}
           />
           <button type="submit">Login</button>
           {err && <p>{err}</p>}
@@ -57,8 +57,7 @@ const Register = () => {
           </span>
         </form>
       </div>
-      <div className="auth-right">
-      </div>
+      <div className="auth-right"></div>
     </div>
   );
 };
