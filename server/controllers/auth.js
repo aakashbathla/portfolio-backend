@@ -48,7 +48,7 @@ export const login = (req, res) => {
         .cookie("access_token", token, {
           path: "/",
           domain: `${process.env.DOMAIN}`,
-          sameSite: "none",
+          sameSite: "Lax",
           secure: true,
         })
         .status(200)
@@ -65,7 +65,7 @@ export const logout = (req, res) => {
       .clearCookie("access_token", {
         path: "/",
         domain: `${process.env.DOMAIN}`,
-        sameSite: "none",
+        sameSite: "Lax",
         secure: `${process.env.SECURE}`,
       })
       .status(200)
