@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: true,
+    origin: "https://www.bathlablogs.com",
   })
 );
 app.use(cookieParser());
