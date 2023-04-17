@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Login/Login.scss";
 import { AuthContext } from "../../utilities/authContext";
 
-const Register = () => {
+const Login = () => {
   const [inputs, setInputs] = useState({ email: "", password: "" });
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
@@ -13,8 +13,11 @@ const Register = () => {
   const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
+    e.persist();
     setInputs((prev) => {
-      return { ...prev, [e.target.name]: e.target.value };
+      console.log(e.target); // Check the value of e.target
+      console.log(e.target.name); // Check the value of e.target.name
+      return { ...prev, [e?.target?.name]: e?.target?.value };
     });
   };
 
@@ -62,4 +65,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

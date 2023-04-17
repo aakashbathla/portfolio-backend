@@ -14,6 +14,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
+    e.persist();
     setInputs((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
