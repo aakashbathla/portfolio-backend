@@ -5,7 +5,7 @@ import { AuthContext } from "../../utilities/authContext";
 import "./Navbar.scss";
 import login from "../../img/login.png";
 import Dropdown from "../DropDown/DropDown";
-
+import logoIcon from "../../img/logo_tuition.png";
 export default function Navbar() {
   const { currentUser, logout } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -15,7 +15,9 @@ export default function Navbar() {
     <div className="nav-container">
       <div className="logo">
         <Link to="/" className="logo-text-container">
-          <h1 className="logo-text">Bathla Blogs</h1>
+          <h1 className="logo-text">
+            <img src={logoIcon} />
+          </h1>
         </Link>
       </div>
       <div className="user">

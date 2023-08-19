@@ -275,6 +275,116 @@ export default function Write() {
             />
             <label htmlFor="vue">Vue.js</label>
           </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "9thscience"}
+              name="cat"
+              value="9thscience"
+              id="9thscience"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="9th science">9th Science</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "10thscience"}
+              name="cat"
+              value="10thscience"
+              id="10thscience"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="10th science">10th Science</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "11thphysics"}
+              name="cat"
+              value="11thphysics"
+              id="11thphysics"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="11th physics">11th Physics</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "11thchemistry"}
+              name="cat"
+              value="11thchemistry"
+              id="11thchemistry"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="11th chemistry">11th Chemistry</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "12thphysics"}
+              name="cat"
+              value="12thphysics"
+              id="12thphysics"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="12th physics">12th Physics</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "12thchemistry"}
+              name="cat"
+              value="12thchemistry"
+              id="12thchemistry"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="12th chemistry">12th Chemistry</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "9thmath"}
+              name="cat"
+              value="9thmath"
+              id="9thmath"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="9th math">9th Math</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "10thmath"}
+              name="cat"
+              value="10thmath"
+              id="10thmath"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="10th math">10th Math</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "11thmath"}
+              name="cat"
+              value="11thmath"
+              id="11thmath"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="11th math">11th Math</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              checked={cat.toLowerCase() === "12thmath"}
+              name="cat"
+              value="12thmath"
+              id="12thmath"
+              onChange={(e) => setCat(e.target.value)}
+            />
+            <label htmlFor="12th math">12th Math</label>
+          </div>
         </div>
         <div className="buttons">
           <button onClick={handleClick}>Publish</button>

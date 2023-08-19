@@ -5,7 +5,7 @@
   margin-top: 40px;
   display: flex;
   gap: 20px;
-  background-color: aliceblue;
+  background-color: rgba(236, 73, 76, 0.1);
   border-radius: 20px;
   flex-wrap: wrap;
   .content {
@@ -53,7 +53,7 @@
         display: flex;
         align-items: center;
         gap: 2px;
-        color: #000070;
+        color: #63bfb2;
       }
     }
   }
@@ -64,16 +64,16 @@
 
     :first-child {
       cursor: pointer;
-      color: #000070;
+      color: #63bfb2;
       background-color: white;
-      border: 1px solid #000070;
+      border: 1px solid #63bfb2;
       padding: 3px 5px;
     }
     :last-child {
       cursor: pointer;
       color: white;
-      background-color: #000070;
-      border: 1px solid #000070;
+      background-color: #63bfb2;
+      border: 1px solid #63bfb2;
       padding: 10px 20px;
       font-size: 20px;
       border-radius: 10px;
@@ -91,23 +91,23 @@
   }
 }
 table {
-  border: 1px solid #000070;
+  border: 1px solid #63bfb2;
   width: 100%;
   // cell spacing as 0
   border-spacing: 0;
 }
 
 table tbody {
-  border: 1px solid #000070;
+  border: 1px solid #63bfb2;
 }
 
 table tr {
-  border: 1px solid #000070;
+  border: 1px solid #63bfb2;
 }
 
 table td {
   font-size: 16px;
-  border: 1px solid #000070;
+  border: 1px solid #63bfb2;
 }
 td {
   resize: both;

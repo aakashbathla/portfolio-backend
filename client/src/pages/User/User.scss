@@ -21,12 +21,12 @@ button.submit {
   border: none;
   cursor: pointer;
   color: #ffffff;
-  background-color: #000080;
+  background-color: #63bfb2;
   border-radius: 10px;
 
   &:hover {
-    background-color: aliceblue;
-    color: #000080;
+    background-color: rgba(236, 73, 76, 0.1);
+    color: #63bfb2;
   }
 }
 

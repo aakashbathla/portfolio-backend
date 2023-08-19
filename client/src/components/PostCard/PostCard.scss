@@ -7,7 +7,7 @@
   /* padding: 50px; */
   flex-direction: column-reverse;
   padding: 10px;
-  background: aliceblue;
+  background: #63bfb2;
   margin: 20px 0;
   .link {
     display: flex;
@@ -40,14 +40,14 @@
     padding: 7.5px 15px;
     border: none;
     cursor: pointer;
-    color: #000080;
+    color: #63bfb2;
     background-color: white;
     border-radius: 10px;
 
     &:hover {
       border: 1px solid white;
-      background-color: aliceblue;
-      color: #000080;
+      background-color: rgba(236, 73, 76, 0.1);
+      color: #63bfb2;
     }
   }
 }

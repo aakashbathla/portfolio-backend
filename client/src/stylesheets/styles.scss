@@ -22,7 +22,7 @@ $lightGreen: #8dbebe;
 
       h1 {
         font-size: 20px;
-        color: #000080;
+        color: #63bfb2;
         margin-bottom: 20px;
       }
 
@@ -43,7 +43,7 @@ $lightGreen: #8dbebe;
         button {
           padding: 10px;
           border: none;
-          background-color: #000080;
+          background-color: #63bfb2;
           cursor: pointer;
           color: white;
         }
@@ -100,9 +100,9 @@ $lightGreen: #8dbebe;
             border: 1px solid white;
 
             &:hover {
-              color: #000080;
+              color: #63bfb2;
               background-color: white;
-              border: 1px solid #000080;
+              border: 1px solid #63bfb2;
             }
           }
         }
@@ -183,8 +183,8 @@ $lightGreen: #8dbebe;
               border: none;
               cursor: pointer;
               background-color: white;
-              border: 1px solid #000080;
-              color: #000080;
+              border: 1px solid #63bfb2;
+              color: #63bfb2;
 
               &:hover {
                 border: 1px solid white;
@@ -284,9 +284,9 @@ $lightGreen: #8dbebe;
             padding: 7.5px 15px;
             border: none;
             cursor: pointer;
-            color: #000080;
+            color: #63bfb2;
             background-color: white;
-            border: 1px solid #000080;
+            border: 1px solid #63bfb2;
 
             &:hover {
               border: 1px solid white;
@@ -359,16 +359,16 @@ $lightGreen: #8dbebe;
 
             :first-child {
               cursor: pointer;
-              color: #000080;
+              color: #63bfb2;
               background-color: white;
-              border: 1px solid #000080;
+              border: 1px solid #63bfb2;
               padding: 3px 5px;
             }
             :last-child {
               cursor: pointer;
               color: white;
-              background-color: #000080;
-              border: 1px solid #000080;
+              background-color: #63bfb2;
+              border: 1px solid #63bfb2;
               padding: 3px 5px;
             }
           }
@@ -377,7 +377,7 @@ $lightGreen: #8dbebe;
             display: flex;
             align-items: center;
             gap: 2px;
-            color: #000080;
+            color: #63bfb2;
           }
         }
       }

@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+
   .logo {
     .logo-text-container {
       text-decoration: none;
@@ -13,6 +13,10 @@
         font-size: 30px;
         font-weight: 300px;
         color: $lightGreen;
+        img {
+          max-width: 175px;
+          height: auto;
+        }
       }
     }
     img {
@@ -47,9 +51,9 @@
     border: 1px solid white;
 
     &:hover {
-      color: #000080;
+      color: #63bfb2;
       background-color: white;
-      border: 1px solid #000080;
+      border: 1px solid #63bfb2;
     }
   }
 }

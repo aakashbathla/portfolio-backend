@@ -43,7 +43,7 @@ export default function Home() {
               <div className="img">
                 {post.post_img && <img src={`${post.post_img}`} alt="" />}
               </div>
-              <div className="content">
+              <div className="content post-content">
                 <Link className="link" to={`/post/${post.id}`}>
                   <h3>{post.title}</h3>
                   <p>

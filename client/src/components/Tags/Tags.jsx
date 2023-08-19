@@ -37,6 +37,36 @@ export default function Tags() {
       <Link className="link" to="/?cat=vue">
         <span>Vue.js</span>
       </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>9th Science</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>10th Science</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>11th Physics</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>11th Chemistry</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>12th Physics</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>12th Chemistry</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>9th Math</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>10th Math</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>11th Math</span>
+      </Link>
+      <Link className="link" to="/?cat=vue">
+        <span>12th Math</span>
+      </Link>
     </div>
   );
 }

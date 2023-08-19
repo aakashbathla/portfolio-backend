@@ -16,7 +16,7 @@
     flex-direction: column;
     gap: 10px;
     padding: 25px;
-    background: aliceblue;
+    background: rgba(236, 73, 76, 0.1);
     border-radius: 20px;
 
     img {
@@ -34,9 +34,9 @@
       padding: 7.5px 15px;
       border: none;
       cursor: pointer;
-      color: #000080;
+      color: #63bfb2;
       background-color: white;
-      border: 1px solid #000080;
+      border: 1px solid #63bfb2;
 
       &:hover {
         border: 1px solid white;
